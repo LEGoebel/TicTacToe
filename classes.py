@@ -17,6 +17,9 @@ class TicTacToeGUI:
             button.grid(row = i // 3, column = i % 3)
             self.buttons.append(button)
 
+        restart_button = tk.Button(self.root, text="Restart", font=("normal", 20), command=self.reset_board)
+        restart_button.grid(row=3, column=0, columnspan=3)
+
     def on_click(self, index):
             if self.board[index] == " " and not self.current_winner:
                 self.board[index] = self.current_player
@@ -47,3 +50,4 @@ class TicTacToeGUI:
                 button.config(text=" ")
             self.current_winner = None
             self.current_player = "X"
+            print("Game was resetted.")
