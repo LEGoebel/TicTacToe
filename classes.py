@@ -119,6 +119,9 @@ class ComputerPlayer:
         return best_move
 
     def minimax(self, board, depth, is_maximizing, player):
+        # Implementation of the minmax Algorithm from Wikipedia: https://de.wikipedia.org/wiki/Minimax-Algorithmus
+        # Basically "brute-forcing" all possible games from the current state, keep track of the outcome with "best_score" and use that to determine
+        # the next move.
         opponent = "O" if player == "X" else "X"
         if TicTacToeGUI.check_winner_static(board, player):
             return 1
